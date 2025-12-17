@@ -1,0 +1,32 @@
+import '../App.css'
+export default function Header() {
+  return (
+    <header className="fk-header">
+       <div className='row'>
+         <div className='col col-md-7'>
+            <div className='row'>
+            <div className='col col-md-3'>
+              <div className="fk-logo">
+                <img src={`${process.env.PUBLIC_URL}/imgs/fkheaderlogo_exploreplus-11f9e2.svg`}alt="user-icon" className="fk-logo"/>
+               </div>
+             </div>
+            <div className='col col-md-9'> 
+                <div className="fk-search">
+                 <input type="text" placeholder="Search for Products, Brands and More"/><span className="fk-search-icon">🔍</span>
+                </div>
+            </div>
+         </div>
+      </div>
+
+      <div className='col col-md-5'> 
+        <div className="row fk-action">
+        <div className="col col-md-3"><a href="/"><img src={`${process.env.PUBLIC_URL}/imgs/profile.svg`}alt="user-icon" className="fk-icon"/><span>Login</span></a></div>
+        <div className="col col-md-3"><a href="/"><img src={`${process.env.PUBLIC_URL}/imgs/cart.svg`}alt="user-icon" className="fk-icon" /><span> Cart </span></a></div>
+        <div className="col col-md-4"><a href="/"><img src={`${process.env.PUBLIC_URL}/imgs/seller.svg`}alt="user-icon"  className="fk-icon"/><span> Become a Seller</span></a></div>
+        <div className="col col-md-2">⋮</div>
+      </div>
+      </div>
+       </div>
+    </header>
+  );
+}
