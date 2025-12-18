@@ -2,43 +2,43 @@ export const categories = [
   {
     id: 1,
     name: "Mobiles & Tablets",
-    catImg:'https://via.placeholder.com/100',
+    catImg:`${process.env.PUBLIC_URL}/imgs/MobilesandTablets.png`,
     subCategories: ["Laptop", "Mobile", "Charger", "Grinder"],
   },
   {
     id: 2,
     name: "Fashion",
-    catImg:'https://via.placeholder.com/100',
+    catImg:`${process.env.PUBLIC_URL}/imgs/fashion.png`,
     subCategories: ["Men", "Women", "Kids"],
   },
   {
     id: 3,
     name: "Electronics",
-    catImg:'https://via.placeholder.com/100',
+     catImg:`${process.env.PUBLIC_URL}/imgs/electorinics.png`,
     subCategories: ["Furniture", "Appliances", "Decor"],
   },
   {
     id: 4,
     name: "TVs & Appliances",
-    catImg:'https://via.placeholder.com/100',
+     catImg:`${process.env.PUBLIC_URL}/imgs/tvandapplicance.jpg`,
     subCategories: ["Furniture", "Appliances", "Decor"],
   },
   {
     id: 5,
     name: "Home & Furniture",
-    catImg:'https://via.placeholder.com/100',
+    catImg:`${process.env.PUBLIC_URL}/imgs/furniture.png`,
     subCategories: ["Furniture", "Appliances", "Decor"],
   },
   {
     id: 6,
     name: "Grocery",
-    catImg:'https://via.placeholder.com/100',
+    catImg:`${process.env.PUBLIC_URL}/imgs/grocery.png`,
     subCategories: ["Furniture", "Appliances", "Decor"],
   },
   {
     id: 7,
     name: "Beauty, Foods",
-    catImg:'https://via.placeholder.com/100',
+    catImg:`${process.env.PUBLIC_URL}/imgs/beuti.png`,
     subCategories: ["Furniture", "Appliances", "Decor"],
   }
  

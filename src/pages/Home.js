@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CategorySection from "../components/CategorySection";
-import { categories } from "../data/products";
+import CategoryBar from "../components/CategoryBar";
+// import { categories } from "../data/products";
 
 export default function Home() {
   return (
@@ -9,9 +9,10 @@ export default function Home() {
       <Header />
 
       <main className="home">
-        {categories.map((cat) => (
+         <CategoryBar />
+        {/* {categories.map((cat) => (
           <CategorySection key={cat.id} category={cat} />
-        ))}
+        ))} */}
       </main>
 
       <Footer />
