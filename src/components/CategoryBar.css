@@ -4,11 +4,13 @@
 }
 
 .category-inner {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  padding: 12px 20px;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px 25px;
+    position: relative;
+    font-weight: 700;
 }
 
 .category-item {

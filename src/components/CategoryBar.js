@@ -10,7 +10,6 @@ export default function CategoryBar() {
   useEffect(() => {
     fetchCategories().then((cats) => {
       const shuffled = shuffleArray(cats);
-
       setVisibleCats(shuffled.slice(0, 8));
       setMoreCats(shuffled.slice(8));
     });
@@ -22,20 +21,22 @@ export default function CategoryBar() {
 
         {/* MAIN 8 CATEGORIES */}
         {visibleCats.map((cat) => (
-          <div key={cat} className="category-item">
-            <span className="cat-name">{formatName(cat)}</span>
+          <div key={cat.slug} className="category-item">
+            <span className="cat-name">
+              {cat.name}
+            </span>
           </div>
         ))}
 
-        {/* MORE BUTTON */}
+        {/* MORE */}
         {moreCats.length > 0 && (
           <div className="category-item more-btn">
             <span>⋮ More</span>
 
             <div className="category-dropdown">
               {moreCats.map((cat) => (
-                <div key={cat} className="dropdown-item">
-                  {formatName(cat)}
+                <div key={cat.slug} className="dropdown-item">
+                  {cat.name}
                 </div>
               ))}
             </div>
@@ -46,7 +47,3 @@ export default function CategoryBar() {
     </div>
   );
 }
-
-/* helper */
-const formatName = (text) =>
-  text.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
