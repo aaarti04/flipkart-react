@@ -1,28 +1,23 @@
-import { products } from "../data/products";
-import ProductCard from "./ProductCard";
+import "./CategorySection.css";
 
-export default function CategorySection({ category }) {
-  const filtered = products.filter(
-    (p) => p.category === category.name
-  );
-
-  const random10 = [...filtered]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 10);
-
+export default function CategorySection({ title, products }) {
   return (
-    <section className="category-section">
-      <h2>{category.name}</h2>
-
-      <div className="subcategories">
-        {category.subCategories.map((sub) => (
-          <span key={sub}>{sub}</span>
-        ))}
-      </div>
+    <section className="category-section fk_container">
+      <h2 className="section-title">{title}</h2>
 
       <div className="product-grid">
-        {random10.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product) => (
+          <div className="product-card" key={product.id}>
+            <img src={product.images[0]} alt={product.name} />
+            <h4>{product.name}</h4>
+            <p className="brand">{product.brand}</p>
+
+            <div className="price-box">
+              <span className="price">₹{product.price}</span>
+              <span className="original">₹{product.originalPrice}</span>
+              <span className="off">{product.offerPercentage}% off</span>
+            </div>
+          </div>
         ))}
       </div>
     </section>

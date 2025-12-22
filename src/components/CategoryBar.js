@@ -1,34 +1,52 @@
+import { useEffect, useState } from "react";
+import { fetchCategories } from "../services/productService";
+import { shuffleArray } from "../utils/shuffleArray";
 import "./CategoryBar.css";
-import '../App.css';
-import { categories } from "../data/products";
 
 export default function CategoryBar() {
+  const [visibleCats, setVisibleCats] = useState([]);
+  const [moreCats, setMoreCats] = useState([]);
+
+  useEffect(() => {
+    fetchCategories().then((cats) => {
+      const shuffled = shuffleArray(cats);
+
+      setVisibleCats(shuffled.slice(0, 8));
+      setMoreCats(shuffled.slice(8));
+    });
+  }, []);
+
   return (
     <div className="fk_container category-bar">
       <div className="category-inner">
-        {categories.slice(0, 7).map((cat) => (
-          <div className="category-item" key={cat.id}>
-            <img src={cat.catImg} alt={cat.name} />
-            <span>
-              {cat.name}
-              {cat.subCategories?.length > 0 && (
-                <i class="arrow down"></i>
-              )}
-            </span>
 
-            {/* DROPDOWN */}
-            {cat.subCategories?.length > 0 && (
-              <div className="category-dropdown">
-                {cat.subCategories.map((sub, i) => (
-                  <div key={i} className="dropdown-item">
-                    {sub}
-                  </div>
-                ))}
-              </div>
-            )}
+        {/* MAIN 8 CATEGORIES */}
+        {visibleCats.map((cat) => (
+          <div key={cat} className="category-item">
+            <span className="cat-name">{formatName(cat)}</span>
           </div>
         ))}
+
+        {/* MORE BUTTON */}
+        {moreCats.length > 0 && (
+          <div className="category-item more-btn">
+            <span>⋮ More</span>
+
+            <div className="category-dropdown">
+              {moreCats.map((cat) => (
+                <div key={cat} className="dropdown-item">
+                  {formatName(cat)}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );
 }
+
+/* helper */
+const formatName = (text) =>
+  text.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());

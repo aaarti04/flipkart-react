@@ -71,20 +71,20 @@ export default function Footer() {
        
       </div>
        <div className="EGBsCF">
-        <div class="N5kmDa">
+        <div className="N5kmDa">
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-0489fc.svg" alt="Become a Seller" width="13" height="12" /><a href="#" aria-label="Become a Seller"><span>Become a Seller</span></a>
         </div>
-        <div class="N5kmDa">
+        <div className="N5kmDa">
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-e4b62a.svg" alt="Advertise" width="13" height="12" /><a href="#" aria-label="Become a Seller"><span>Advertise</span></a>
         </div>
-        <div class="N5kmDa">
+        <div className="N5kmDa">
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-6947a9.svg" alt="Gift Cards" width="13" height="12" /><a href="#" aria-label="Gift Cards"><span>Gift Cards</span></a>
         </div>
-        <div class="N5kmDa">
+        <div className="N5kmDa">
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-b9e23c.svg" alt="Help Center" width="13" height="12" /><a href="#" aria-label="Help Center"><span>Help Center</span></a>
         </div>
-        <div class="N5kmDa">
-          <span class="UljnS6">© 2007-2025 <span>Flipkart.com</span></span>
+        <div className="N5kmDa">
+          <span className="UljnS6">© 2007-2025 <span>Flipkart.com</span></span>
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-69e7ec.svg" alt="Payment methods"  />
         </div>
        </div>
