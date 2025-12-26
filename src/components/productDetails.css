@@ -1,0 +1,147 @@
+/* ---------- PAGE ---------- */
+.product-page {
+  background: #f1f3f6;
+  padding: 20px 0;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.product-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ---------- LEFT STICKY IMAGE ---------- */
+.left-sticky {
+  width: 40%;
+  position: sticky;
+  top: 80px; /* header height */
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* ---------- RIGHT SCROLL CONTENT ---------- */
+.right-scroll {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- SECTION BOX ---------- */
+.right-scroll > div,
+.product-info,
+.product-extra,
+.ratings {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* ---------- GALLERY ---------- */
+.product-gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.product-gallery .thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-gallery .thumbs img {
+  width: 64px;
+  height: 64px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  cursor: pointer;
+  object-fit: contain;
+  background: #fff;
+}
+
+.product-gallery .thumbs img.active {
+  border: 2px solid #2874f0;
+}
+
+.product-gallery .main-image {
+  flex: 1;
+  border: 1px solid #ddd;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-gallery .main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- PRODUCT INFO ---------- */
+.product-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.original {
+  text-decoration: line-through;
+  color: #878787;
+}
+
+.off {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+/* ---------- REVIEWS ---------- */
+.review {
+  border-top: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.review:first-child {
+  border-top: none;
+}
+
+.review .name {
+  font-weight: 600;
+}
+
+.review .stars {
+  color: #388e3c;
+}
+
+/* ---------- LOADER ---------- */
+.loading {
+  padding: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .product-layout {
+    flex-direction: column;
+  }
+
+  .left-sticky,
+  .right-scroll {
+    width: 100%;
+    position: static;
+  }
+}

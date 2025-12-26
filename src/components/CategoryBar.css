@@ -13,15 +13,17 @@
     font-weight: 700;
 }
 
-.category-item {
+.cate_name {
   font-size: 14px;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
+  color: black;
 }
 
-.category-item:hover {
+.cate_name:hover {
   color: #2874f0;
+  text-decoration: none;
 }
 
 .more-btn:hover .category-dropdown {
@@ -40,11 +42,6 @@
   z-index: 100;
 }
 
-.dropdown-item {
-  padding: 10px 14px;
-  font-size: 14px;
-}
 
-.dropdown-item:hover {
-  background: #f1f3f6;
-}
+
+

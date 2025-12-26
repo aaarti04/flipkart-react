@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../services/productService";
-import { shuffleArray } from "../utils/shuffleArray";
 import "./CategoryBar.css";
 
 export default function CategoryBar() {
@@ -9,9 +8,8 @@ export default function CategoryBar() {
 
   useEffect(() => {
     fetchCategories().then((cats) => {
-      const shuffled = shuffleArray(cats);
-      setVisibleCats(shuffled.slice(0, 8));
-      setMoreCats(shuffled.slice(8));
+      setVisibleCats(cats.slice(0, 8));
+      setMoreCats(cats.slice(8));
     });
   }, []);
 
@@ -23,7 +21,7 @@ export default function CategoryBar() {
         {visibleCats.map((cat) => (
           <div key={cat.slug} className="category-item">
             <span className="cat-name">
-              {cat.name}
+           <a href={`/category/${cat.slug}`} className="cate_name">{cat.name}</a>
             </span>
           </div>
         ))}
@@ -36,7 +34,7 @@ export default function CategoryBar() {
             <div className="category-dropdown">
               {moreCats.map((cat) => (
                 <div key={cat.slug} className="dropdown-item">
-                  {cat.name}
+                   <a href={`/category/${cat.slug}`} className="cate_name">{cat.name}</a>
                 </div>
               ))}
             </div>
