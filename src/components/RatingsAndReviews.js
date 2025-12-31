@@ -4,7 +4,7 @@ function RatingsAndReviews({ product }) {
   return (
     <div className="reviews-section">
       <div className="summary">
-        <h2>{product.rating} ⭐</h2>
+        <span className="stock">{product.rating} ⭐</span>
         <p>{product.reviews.length} Reviews</p>
       </div>
 

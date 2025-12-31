@@ -1,5 +1,16 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 export default function Header() {
+   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+
+    navigate(`/search?q=${query}`);
+  };
   return (
     <header className="fk-header">
        <div className='row'>
@@ -7,12 +18,23 @@ export default function Header() {
             <div className='row'>
             <div className='col col-md-3'>
               <div className="fk-logo">
-                <img src={`${process.env.PUBLIC_URL}/imgs/fkheaderlogo_exploreplus-11f9e2.svg`}alt="user-icon" className="fk-logo"/>
+                <a href='/'>
+                <img src={`${process.env.PUBLIC_URL}/imgs/fkheaderlogo_exploreplus-11f9e2.svg`}alt="user-icon" className="fk-logo"/></a>
                </div>
              </div>
             <div className='col col-md-9'> 
                 <div className="fk-search">
-                 <input type="text" placeholder="Search for Products, Brands and More"/><span className="fk-search-icon">🔍</span>
+                    <form className="fk-search" onSubmit={handleSearch}>
+                  <input
+                  type="text"
+                  placeholder="Search for Products, Brands and More"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <span className="fk-search-icon" onClick={handleSearch}>
+                  🔍
+                </span>
+                </form>
                 </div>
             </div>
          </div>

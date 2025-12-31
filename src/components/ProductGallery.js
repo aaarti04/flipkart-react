@@ -1,18 +1,20 @@
 import { useState } from "react";
+import "./productDetails.css";
 
 export default function ProductGallery({ images = [], thumbnail }) {
-  const [activeImg, setActiveImg] = useState(thumbnail || images[0]);
+  const allImages = thumbnail ? [thumbnail, ...images] : images;
+  const [activeImg, setActiveImg] = useState(allImages[0]);
 
   return (
     <div className="product-gallery">
       <div className="thumbs">
-        {[thumbnail, ...images].map((img, index) => (
+        {allImages.map((img, index) => (
           <img
             key={index}
             src={img}
-            alt=""
             onClick={() => setActiveImg(img)}
             className={activeImg === img ? "active" : ""}
+            alt=""
           />
         ))}
       </div>

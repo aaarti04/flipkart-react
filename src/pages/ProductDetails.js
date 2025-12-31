@@ -2,79 +2,64 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CategoryBar from "../components/CategoryBar";
+
 import ProductGallery from "../components/ProductGallery";
 import ProductInfo from "../components/ProductInfo";
 import ProductExtraInfo from "../components/ProductExtraInfo";
 import RatingsAndReviews from "../components/RatingsAndReviews";
-import { fetchProductById } from "../services/productService";
+
+import { fetchProductById, fetchCategories } from "../services/productService";
+import SimilarProducts from "../components/SimilarProducts";
 import "../components/productDetails.css";
-import CategoryBar from "../components/CategoryBar";
-import {
-  fetchCategories,
-  fetchProductsByCategory,
-} from "../services/productService";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     fetchProductById(Number(id)).then(setProduct);
+    fetchCategories().then(setCategories);
   }, [id]);
 
-  const { slug } = useParams();
-
-  const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-
-      const cats = await fetchCategories();
-      setCategories(cats);
-
-      const data = await fetchProductsByCategory(slug);
-      setProducts(data);
-
-      setLoading(false);
-    };
-
-    loadData();
-  }, [slug]);
   if (!product) return <p className="loading">Loading product...</p>;
 
   return (
     <>
       <Header />
- <CategoryBar
-        categories={categories}
-        activeCategory={slug}
-      />
-
+      <CategoryBar categories={categories} activeCategory={product.category} />
 
       <main className="product-page fk_container">
         <div className="product-layout">
 
-          {/* LEFT — STICKY IMAGE */}
-          <div className="left-sticky">
+          {/* LEFT – STICKY IMAGE */}
+          <div className="left-panel">
             <ProductGallery
               images={product.images}
               thumbnail={product.thumbnail}
             />
+
+            <div className="action-buttons">
+              <button className="cart-btn">ADD TO CART</button>
+              <button className="buy-btn">BUY NOW</button>
+            </div>
           </div>
 
-          {/* RIGHT — SCROLLABLE DETAILS */}
-          <div className="right-scroll">
+          {/* RIGHT – DETAILS */}
+          <div className="right-panel">
             <ProductInfo product={product} />
             <ProductExtraInfo product={product} />
             <RatingsAndReviews product={product} />
           </div>
 
         </div>
+        
       </main>
-
+<SimilarProducts
+  category={product.category}
+  currentProductId={product.id}
+/>
       <Footer />
     </>
   );

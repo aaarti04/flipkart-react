@@ -157,7 +157,7 @@ background-color: #f0f5ff;
 }
 
 .price {
-  color: #b12704;
+  color: #000;
   font-weight: bold;
 }
 ul{
@@ -280,3 +280,13 @@ ul{
   border-radius: 4px;
 }
 
+.forofor{
+ display: flex;
+ justify-content: center;
+ margin: 10%;
+text-align: center;
+}
+.not_f{
+  font-size: 24px;
+  display: block;
+}

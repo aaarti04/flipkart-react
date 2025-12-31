@@ -2,25 +2,34 @@ import "./productDetails.css";
 function ProductExtraInfo({ product }) {
   return (
     <div className="extra">
-      <div>
-        <h3>Highlights</h3>
-        <ul>
-          {product.tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}
-          <li>Weight: {product.weight} kg</li>
-          <li>
-            Size: {product.dimensions.width} ×
-            {product.dimensions.height} ×
-            {product.dimensions.depth} cm
-          </li>
-        </ul>
-      </div>
+      <div className="specifications">
+        <div className="speci_title">Specifications</div>
+       <ul className="offers">
+  <li>
+    <span className="label">Brand</span>
+    <span className="value">{product.brand}</span>
+  </li>
 
-      <div>
-        <h3>Delivery</h3>
-        <p>{product.shippingInformation}</p>
-        <p>Min Order: {product.minimumOrderQuantity}</p>
+  <li>
+    <span className="label">Weight</span>
+    <span className="value">{product.weight} kg</span>
+  </li>
+
+  <li>
+    <span className="label">Size</span>
+    <span className="value">
+      {product.dimensions.width} ×
+      {product.dimensions.height} ×
+      {product.dimensions.depth} cm
+    </span>
+  </li>
+
+  <li>
+    <span className="label">Warranty</span>
+    <span className="value">{product.warrantyInformation}</span>
+  </li>
+</ul>
+
       </div>
     </div>
   );

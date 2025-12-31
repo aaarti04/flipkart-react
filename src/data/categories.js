@@ -3,6 +3,7 @@ export const categories = [
   { slug: "smartphones", name: "Smartphones" },
   { slug: "laptops", name: "Laptops" },
   { slug: "fragrances", name: "Fragrances" },
+  { slug: "beauty", name: "Beauty" },
   { slug: "kitchen-accessories", name: "Kitchen Accessories" },
   { slug: "groceries", name: "Groceries" },
   { slug: "home-decoration", name: "Home Decoration" },
@@ -12,4 +13,5 @@ export const categories = [
   { slug: "mens-shoes", name: "Men's Shoes" },
   { slug: "skin-care", name: "Skin Care" },
   { slug: "sports-accessories", name: "Sports Accessories" }
+
 ];

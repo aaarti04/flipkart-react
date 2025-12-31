@@ -45,6 +45,13 @@ export const productsByCategory = {
     date: "2025-04-30T09:41:02.053Z",
     reviewerName: "Eleanor Collins",
     reviewerEmail: "eleanor.collins@x.dummyjson.com"
+    },
+    {
+    rating: 5,
+    comment: "Highly impressed!",
+    date: "2025-04-30T09:41:02.053Z",
+    reviewerName: "Eleanor Collins",
+    reviewerEmail: "eleanor.collins@x.dummyjson.com"
     }
     ],
     returnPolicy: "No return policy",

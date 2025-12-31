@@ -23,3 +23,23 @@ export const fetchProductById = async (id) => {
   return product || null;
 };
 
+export const getAllProducts = () => {
+  return Object.values(productsByCategory).flat();
+}
+
+export const searchProducts = async (query) => {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+
+  const allProducts = Object.values(productsByCategory).flat();
+
+  const results = allProducts.filter(product =>
+    product.title?.toLowerCase().includes(q) ||
+    product.description?.toLowerCase().includes(q) ||
+    product.brand?.toLowerCase().includes(q) ||
+    product.category?.toLowerCase().includes(q) ||
+    product.tags?.some(tag => tag.toLowerCase().includes(q))
+  );
+
+  return Promise.resolve(results);
+};

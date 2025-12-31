@@ -17,11 +17,14 @@ export default function CategorySection({ title, products }) {
         {products.map((product) => (
           <div className="product-card" key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
             <img src={product.thumbnail} alt={product.title} />
-            <h4>{product.title}</h4>
+            <span>{product.title}</span>
             <p className="brand">{product.brand}</p>
-
+             <span class="ratingnumber">{product.rating} ⭐ </span> 
+             <span class="total_review">({product.reviews.length})</span>
             <div className="price-box">
-              <span className="price">₹{product.price}</span>
+              
+              <span className="price">₹{Math.round(product.price - (product.price * product.discountPercentage) / 100)}</span>
+              <span class="original">{product.price}</span>
               <span className="off">
                 {Math.round(product.discountPercentage)}% off
               </span>
