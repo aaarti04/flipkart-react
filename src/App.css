@@ -290,3 +290,78 @@ text-align: center;
   font-size: 24px;
   display: block;
 }
+
+.fk-detailsheader {
+    align-items: center;
+    background: #2874f0;
+    padding: 8px 115px;
+    gap: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    color: #fff;
+}
+@media (max-width: 768px) {
+  .fk-detailsheader {
+    flex-wrap: wrap;
+  }
+
+  .fk-search {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .fk-actions {
+    gap: 15px;
+  }
+}
+.fk-detailsheader {
+  z-index: 1000;
+  height: 56px;
+}
+.gWHkja a {
+  border: none;
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+}
+.TVd0Ah {
+    display: block;
+}
+.p8iyLE {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: -1px;
+}
+.p8iyLE .stfyUS {
+    color: #ffe500;
+    font-weight: 500;
+    margin-right: 2px;
+}
+.fk-detailsheader .fk-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+background-color: #f0f5ff;
+  padding: 2px 5px;
+  border-radius: 2px;
+  width: 100%;
+}
+.fk-detailsheader .fk-logo{
+  margin-left: 70px ;
+}
+.btn_login{
+  background-color: #fff;
+  width: 120px;
+  border-radius: 0;
+  padding: 5px 40px;
+  color: #2874f0;
+  font-weight: 600;
+}
+.fk-detailsheader .fk-action a{
+ color: #fff;
+ font-weight: 600;
+ margin-right: 10px;
+}

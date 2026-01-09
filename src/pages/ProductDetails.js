@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Detailheader from "../components/Detailheader";
 import Footer from "../components/Footer";
 import CategoryBar from "../components/CategoryBar";
 
@@ -27,7 +27,7 @@ export default function ProductDetails() {
 
   return (
     <>
-      <Header />
+      <Detailheader />
       <CategoryBar categories={categories} activeCategory={product.category} />
 
       <main className="product-page fk_container">
